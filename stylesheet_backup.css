@@ -1,0 +1,234 @@
+html{
+	margin: 0px;
+	height: 100%;
+}
+
+body{
+	margin: 0px;
+	height: 100%;
+}
+
+/* LOGIN PAGE */
+.loginWrapper{
+	background-color: #EEEEEE;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+}
+
+#loginBox{
+	margin: 0 auto;
+	border: solid 1px;
+	height: 175px;
+	width: 350px;
+	background-color: #FFFFFF;
+	font-family: Verdana;
+	border-radius: 5px;
+	border-color: #FF0000;
+}
+
+#loginText{
+	text-align: center;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	font-size: 30px;
+	color: #999999;
+}
+
+#loginInput{
+
+}
+
+.loginBoxText{
+	float: left;
+	padding-left: 15px;
+}
+
+.loginBoxInput{
+	float: right;
+	padding-right: 15px;
+}
+
+.loginButton{
+	width: 100%;
+	clear: both;
+	text-align: center;
+	padding-top: 10px;
+}
+
+/* END LOGIN PAGE */
+
+.wrapper{
+	background-color: yellow;
+	height: 100%;
+}
+
+.navigation{
+	float: left;
+	background-color: #EDEDED;
+	width: calc(15% - 2px);
+	height: 100%;
+	color: #FFFFFF;
+	font-family: Verdana;
+	border-right: solid 2px;
+	border-color: #CACACE;
+}
+
+.content{
+	float: left;
+	background-color: #F7F7F7;
+	width: 85%;
+	height: 100%;
+}
+
+/*FRAMEWORK MARKUP ENDS HERE*/
+
+/*NAVBAR MARKUP STARTS HERE*/
+
+/*.navHeader{
+	font-size: 1.5em;
+	text-align: center;
+	height: calc(5%);
+	width: 100%;
+	line-height: 45px;
+}*/
+
+.logoBox{	
+	border-bottom: solid 2px;
+	border-right: solid 2px;
+	border-color: #CACACE;
+	background-color: #FFFFFF;
+	width: 100%;
+	color: #999999;
+	height: calc(10% - 2px);
+}
+
+#logo{
+	display: block;
+	margin: auto;
+	padding: 10px;
+}
+
+#username{
+	display: block;
+	margin: auto;
+	padding: 10px;
+	color: #000000;
+	float: right;
+}
+
+.navBody{
+	margin: 0 0 35px; /* bottom = footer height */
+	position: relative;
+    width: 100%;
+    background-color: #EDEDED;
+    color: #7A7A85;
+}
+
+.navFooter{
+	position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 35px;
+    background-color: #CACACE;
+    width: 15%;
+}
+
+#footerSettingsButton{
+	float: left;
+	width: 50%;
+	padding-top: 7px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #CACACE;
+}
+
+#footerLogoutButton{
+	/*float: right;*/
+	width: 100%;
+	padding-top: 7px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #CACACE;
+}
+
+.navBody ul{	
+	padding: 0px;
+	list-style-type: none;
+}
+
+.navBody li{
+	border: solid 1px;
+	border-color: #FF0000;
+	margin-right: 5px;
+	margin-left: 5px;
+	margin-top: 5px;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.navBody li a{
+	display: block;
+	color: #252528;
+	text-decoration: none;
+	padding: 5px;
+}
+
+.navBody li a.active{
+	background-color: #919396;
+}
+
+.navBody li a:hover:not(.active){
+	background-color: #919396;
+}
+
+/*NAVBAR MARKUP ENDS HERE*/
+
+
+/*CONTENT MARKUP STARTS HERE*/
+
+.contentNav{
+	background-color: #EDEDED;
+	height: calc(10% - 2px);
+	width: 100%;
+	border-bottom: solid 2px;
+	border-bottom-color: #CACACE;
+	color: #3A5171;
+}
+
+
+.pageContent{
+	padding: 10px;
+}
+
+.automerkPlaatjeKlein{
+	width: 150px;
+}
+
+.succes{
+	background-color: #BBFFBB;
+}
+
+.error{
+	background-color: #FFBBBB;
+}
+
+.plaatjeOverzicht{
+	width: 150px;
+	height: 150px;
+}
+
+.plaatjeGroot{
+	width: 800px;
+}
+
+.plaatjeKlein{
+	height: 75px;
+}
+
+/*CONTENT MARKUP ENDS HERE*/
