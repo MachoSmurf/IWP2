@@ -5,8 +5,8 @@
 		die();
 	}
 
-	//check if this ID is a friend of logged in user, or user is admin
-	if (checkFriendRelation($_GET["id"]) || $_SESSION["rechten"]==1)
+	//check relation
+	if (checkFriendRelation($_GET["id"]))
 	{
 		$vriend_id = sanitize($_GET["id"]);
 		settype($vriend_id, "integer");

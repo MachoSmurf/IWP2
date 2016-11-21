@@ -89,7 +89,6 @@
 						</select>
 					</div>
 				</div>
-			</form>
 						<?php
 					}
 			?>

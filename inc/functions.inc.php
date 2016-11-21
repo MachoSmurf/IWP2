@@ -238,7 +238,7 @@
 		$stmt->fetch();
 		$stmt->free_result();
 
-		if ($check == 1)
+		if ($check != null)
 			{return 1;}
 		else
 			{return 0;}
@@ -246,7 +246,7 @@
 
 
 	/**
-	 * Function that checks whether the relation between a user and a friend is real, in order to prevent malicious input
+	 * Function that checks whether the relation between a brand and a friend is real, in order to prevent malicious input
 	 *
 	 * @param $friendID int ID of the friend that should be checked against the next param (car brand)
 	 *
@@ -308,19 +308,14 @@
 	 *
 	 * @param $username string new users username
 	 *
-	 * @param $email string new users email
-	 *
-	 * @param $voornaam string new users first name
-	 *
-	 * @param $achternaam string new users achternaam
-	 *
-	 * @return boolean returns true if the link is succesfuly made
-	 *
 	 */
 	function mailAdmin($userID, $username)
 	{
 		//send each admin an email with new user information
 		global $dbConn;
+
+		ini_set("SMTP", "mailrelay.fhict.local");
+    	ini_set("sendmail_from", "i358895@iris.fhict.nl");
 
 		$stmt = $dbConn->prepare("SELECT email FROM `user` WHERE `rechten`=1");
 		$stmt->execute();
@@ -330,9 +325,8 @@
 		{
 			$to = $row["email"];
 			$subject = "Nieuwe gebruiker vriendenboek";
-			$message = "Een nieuwe gebruiker heeft zich aangemeld met de volgende gegevens:\n";
-			$message.= "Gebruikers ID: " . $userID . "\n";
-			$message.= "Gebruikersnaam: " . $username . "\n";
+			$message = "Een nieuwe gebruiker heeft zich aangemeld met de volgende gegevens: \r\n".$username . "\r\n" . $userID;
+			
 			$headers = "From: i358895@iris.fhict.nl";
 			mail($to, $subject, $message, $headers);
 		}
@@ -342,7 +336,7 @@
 
 
 	/**
-	 * Function that checks whether the relation between a user and a friend is real, in order to prevent malicious input
+	 * Deletes relation between friends
 	 *
 	 * @param $friendID int first part of the link to be deleted
 	 *
@@ -355,15 +349,18 @@
 	{
 		global $dbConn;
 
-		$stmt = $dbConn->prepare("DELETE FROM koppelingen WHERE `vriend_id`=? AND `automerk_id`=? ");
-		$stmt->bind_param("ii", $friendID, $brandID);
-		if ($stmt->execute())
+		if (checkFriendRelation($friendID))
 		{
-			return true;
-		}
-		else
-		{
-			return false;
+			$stmt = $dbConn->prepare("DELETE FROM koppelingen WHERE `vriend_id`=? AND `automerk_id`=? ");
+			$stmt->bind_param("ii", $friendID, $brandID);
+			if ($stmt->execute())
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
 		}
 	}
 ?>

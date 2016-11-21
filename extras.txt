@@ -1,0 +1,6 @@
+-input controle (zijn alle velden ingevuld, vrienden of koppelingen)
+-javascript bevestigingen bij verwijderen
+-globale settings
+-Sessie timeout (auto uitlog)
+-controlle dubbele invoer vrienden (per user) en automerk (globaal)
+-Input sanitation
